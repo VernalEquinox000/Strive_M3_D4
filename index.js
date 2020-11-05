@@ -15,29 +15,28 @@ const loadBooks = function() {
                 
             
                 let book = document.createElement("div") 
-                book.className = "col-6 col-sm-2 col-md-3 col-lg-4"; 
+                book.className = "col-6 col-sm-6 col-md-3 col-lg-2"; 
                 book.innerHTML = `<div class="card">
-                <img class="card-img-top" src="${element.img}" style="width:100%; height:200px"/>
-                                     <div class="card-body h-100">
-                                      <p><strong>${element.title} </strong></br>
-                                      ${element.price} €<br></p>
-                                      <button type="button" class="btn btn-primary" onclick=addToCart()>Add To Cart</button>
-                                 </div>
-                                </div>` 
-            bookList.appendChild(book)
+                                    <img src="${element.img}" class="card-img-top" alt="${element.title}" style="max-width:100%">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${element.title}</h5>
+                                        <p class="card-text">${element.price} €</p>
+                                        <button type="button" class="btn btn-primary" onclick=addToCart()>Add To Cart</button>
+                                    </div>
+                                </div>
+                            </div>`
+                bookList.appendChild(book)
             }); 
 
             }
         )
-              
-    .catch(err => {
+        .catch(err => {
               console.error('!!!!!!!!!!!!!!!!!!!! ', err);
           });
   }
               
               
 
-              
 window.onload = function(){
   loadBooks()
 }
